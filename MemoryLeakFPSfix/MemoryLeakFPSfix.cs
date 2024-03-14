@@ -40,7 +40,7 @@ namespace MemoryLeakFPSfix
 			if (MapState == MapStates.MAPLOADED) return;
 
 			MapState = MapStates.MAPLOADED;
-			//Messenger.Default.Register<WorldDidMoveEvent>(this, new Action<WorldDidMoveEvent>(this.WorldDidMove));
+			Messenger.Default.Register<WorldDidMoveEvent>(this, new Action<WorldDidMoveEvent>(this.WorldDidMove));
 
 			if (Enviro.EnviroManager.instance) Enviro.EnviroManager.instance.Reflections.Settings.globalReflectionsUpdateOnPosition = false;
 		}
@@ -50,13 +50,14 @@ namespace MemoryLeakFPSfix
 			Loader.LogDebug("OnMapWillUnload");
 
 			MapState = MapStates.MAPUNLOADING;
-			//Messenger.Default.Unregister<WorldDidMoveEvent>(this);
+			Messenger.Default.Unregister<WorldDidMoveEvent>(this);
 		}
 
-		/*(private void WorldDidMove(WorldDidMoveEvent evt)
+		private void WorldDidMove(WorldDidMoveEvent evt)
 		{
 			Loader.LogDebug("WorldDidMove");
-		}*/
+			EnviroManager.instance?.Reflections.RenderGlobalReflectionProbe(true);
+		}
 
 		void OnDestroy()
 		{
@@ -111,6 +112,10 @@ namespace MemoryLeakFPSfix.Patches
 		{
 			___Reflections.Settings.globalReflectionsUpdateOnPosition = false;
 			return true;
+		}
+		static void Postfix(EnviroReflectionsModule ___Reflections)
+		{
+			___Reflections.RenderGlobalReflectionProbe(true);
 		}
 	}
 }
