@@ -1,0 +1,10 @@
+{
+	"Id": "MemoryLeakFPSfix",
+	"Version": "1.0.0",
+	"DisplayName": "Memory Leak & FPS fix",
+	"Author": "Vanguard",
+	"EntryMethod": "MemoryLeakFPSfix.UMM.Loader.Load",
+	"ManagerVersion": "0.27.10",
+	"HomePage": "https://www.nexusmods.com/railroader/mods/33",
+	"Repository": "https://raw.githubusercontent.com/mricher-git/rr-MemoryLeakFPSfix-mod/master/repository.json"
+}
