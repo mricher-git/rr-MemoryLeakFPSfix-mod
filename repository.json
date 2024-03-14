@@ -2,6 +2,11 @@
 	"Releases": [
 		{
 			"Id": "MemoryLeakFPSfix",
+			"Version": "1.0.1",
+			"DownloadUrl": "https://github.com/mricher-git/rr-MemoryLeakFPSfix-mod/releases/download/v1.0.1/MemoryLeakFPSfix.zip"
+		},
+		{
+			"Id": "MemoryLeakFPSfix",
 			"Version": "1.0.0",
 			"DownloadUrl": "https://github.com/mricher-git/rr-MemoryLeakFPSfix-mod/releases/download/v1.0.0/MemoryLeakFPSfix.zip"
 		}

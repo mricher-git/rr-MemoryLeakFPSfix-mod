@@ -1,6 +1,6 @@
 {
 	"Id": "MemoryLeakFPSfix",
-	"Version": "1.0.0",
+	"Version": "1.0.1",
 	"DisplayName": "Memory Leak & FPS fix",
 	"Author": "Vanguard",
 	"EntryMethod": "MemoryLeakFPSfix.UMM.Loader.Load",
